@@ -1,0 +1,40 @@
+<% content_for :styles do %>
+  <%= stylesheet_pack_tag 'vendor/libs/flot/flot', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/c3/c3', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/chartist/chartist', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/morris/morris', media: 'all' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <!-- Dependencies -->
+  <!-- NOTE: When using Google Maps on your own site you MUST get your own API key:
+             https://developers.google.com/maps/documentation/javascript/get-api-key
+             After you got the key paste it in the URL below. -->
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCHtdj4L66c05v1UZm-nte1FzUEAN6GKBI"></script>
+  <%= javascript_pack_tag 'vendor/libs/gmaps/gmaps' %>
+  <%= javascript_pack_tag 'vendor/libs/eve/eve' %>
+  <%= javascript_pack_tag 'vendor/libs/raphael/raphael' %>
+  <%= javascript_pack_tag 'vendor/libs/mapael/mapael' %>
+  <%= javascript_pack_tag 'vendor/libs/mapael/maps/world_countries' %>
+  <%= javascript_pack_tag 'vendor/libs/flot/flot' %>
+  <%= javascript_pack_tag 'vendor/libs/d3/d3' %>
+  <%= javascript_pack_tag 'vendor/libs/c3/c3' %>
+  <%= javascript_pack_tag 'vendor/libs/chartist/chartist' %>
+  <%= javascript_pack_tag 'vendor/libs/chartjs/chartjs' %>
+  <%= javascript_pack_tag 'vendor/libs/morris/morris' %>
+  <%= javascript_pack_tag 'vendor/libs/sparkline/sparkline' %>
+<% end %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<%= render "complete_ui/gmaps" %>
+<%= render "complete_ui/mapael" %>
+<%= render "complete_ui/flot" %>
+<%= render "complete_ui/c3" %>
+<%= render "complete_ui/chartist" %>
+<%= render "complete_ui/chartjs" %>
+<%= render "complete_ui/morris" %>
+<%= render "complete_ui/sparkline" %>

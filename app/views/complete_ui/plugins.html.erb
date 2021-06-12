@@ -1,0 +1,175 @@
+<% content_for :styles do %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-slider/bootstrap-slider', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/nouislider/nouislider', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/select2/select2', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-select/bootstrap-select', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-datepicker/bootstrap-datepicker', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/flatpickr/flatpickr', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/timepicker/timepicker', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/minicolors/minicolors', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/fullcalendar/fullcalendar', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/sweetalert2/sweetalert2', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/growl/growl', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/toastr/toastr', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-markdown/bootstrap-markdown', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/quill/typography', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/quill/editor', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/typeahead-js/typeahead', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/datatables/datatables', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-table/bootstrap-table', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-sortable/bootstrap-sortable', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/dropzone/dropzone', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/flow-js/flow', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/dragula/dragula', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-duallistbox/bootstrap-duallistbox', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/nestable/nestable', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/jstree/themes/default/style', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/ladda/ladda', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/vegas/vegas', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/swiper/swiper', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/cropper/cropper', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/bootstrap-maxlength/bootstrap-maxlength', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/shepherd/shepherd', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/spinkit/spinkit', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/photoswipe/photoswipe', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/blueimp-gallery/gallery', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/blueimp-gallery/gallery-indicator', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/blueimp-gallery/gallery-video', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/smartwizard/smartwizard', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/perfect-scrollbar/perfect-scrollbar', media: 'all' %>
+  <%= stylesheet_pack_tag 'vendor/libs/plyr/plyr', media: 'all' %>
+<% end %>
+
+<% content_for :scripts do %>
+  <!-- Dependencies -->
+  <%= javascript_pack_tag 'vendor/libs/numeral/numeral' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-slider/bootstrap-slider' %>
+  <%= javascript_pack_tag 'vendor/libs/nouislider/nouislider' %>
+  <%= javascript_pack_tag 'vendor/libs/select2/select2' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-tagsinput/bootstrap-tagsinput' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-select/bootstrap-select' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-datepicker/bootstrap-datepicker' %>
+  <%= javascript_pack_tag 'vendor/libs/flatpickr/flatpickr' %>
+  <%= javascript_pack_tag 'vendor/libs/moment/moment' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker' %>
+  <%= javascript_pack_tag 'vendor/libs/timepicker/timepicker' %>
+  <%= javascript_pack_tag 'vendor/libs/minicolors/minicolors' %>
+  <%= javascript_pack_tag 'vendor/libs/fullcalendar/fullcalendar' %>
+  <%= javascript_pack_tag 'vendor/libs/autosize/autosize' %>
+  <%= javascript_pack_tag 'vendor/libs/vanilla-text-mask/vanilla-text-mask' %>
+  <%= javascript_pack_tag 'vendor/libs/vanilla-text-mask/text-mask-addons' %>
+  <%= javascript_pack_tag 'vendor/libs/bootbox/bootbox' %>
+  <%= javascript_pack_tag 'vendor/libs/sweetalert2/sweetalert2' %>
+  <%= javascript_pack_tag 'vendor/libs/growl/growl' %>
+  <%= javascript_pack_tag 'vendor/libs/toastr/toastr' %>
+  <%= javascript_pack_tag 'vendor/libs/markdown/markdown' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-markdown/bootstrap-markdown' %>
+  <script>
+    // Quill does not support IE 10 and below so don't load it to prevent console errors
+    if (typeof document.documentMode !== 'number' || document.documentMode > 10) {
+      document.open();
+      document.write('\x3Cscript src="<%= asset_pack_path 'vendor/libs/quill/quill.js' %>">\x3C/script>');
+      document.close();
+    }
+  </script>
+  <%= javascript_pack_tag 'vendor/libs/typeahead-js/typeahead' %>
+  <%= javascript_pack_tag 'vendor/libs/datatables/datatables' %>
+  <%= javascript_pack_tag 'vendor/libs/tableexport/tableexport' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-table/bootstrap-table' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-table/extensions/export/export' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-sortable/bootstrap-sortable' %>
+  <%= javascript_pack_tag 'vendor/libs/dropzone/dropzone' %>
+  <%= javascript_pack_tag 'vendor/libs/flow-js/flow' %>
+  <%= javascript_pack_tag 'vendor/libs/dragula/dragula' %>
+  <%= javascript_pack_tag 'vendor/libs/sortablejs/sortable' %>
+  <%= javascript_pack_tag 'vendor/libs/knob/knob' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-menu/bootstrap-menu' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-duallistbox/bootstrap-duallistbox' %>
+  <%= javascript_pack_tag 'vendor/libs/nestable/nestable' %>
+  <%= javascript_pack_tag 'vendor/libs/jstree/jstree' %>
+  <%= javascript_pack_tag 'vendor/libs/spin/spin' %>
+  <%= javascript_pack_tag 'vendor/libs/ladda/ladda' %>
+  <%= javascript_pack_tag 'vendor/libs/validate/validate' %>
+  <%= javascript_pack_tag 'vendor/libs/vegas/vegas' %>
+  <%= javascript_pack_tag 'vendor/libs/swiper/swiper' %>
+  <%= javascript_pack_tag 'vendor/libs/cropper/cropper' %>
+  <%= javascript_pack_tag 'vendor/libs/bootstrap-maxlength/bootstrap-maxlength' %>
+  <%= javascript_pack_tag 'vendor/libs/shepherd/shepherd' %>
+  <%= javascript_pack_tag 'vendor/libs/pwstrength-bootstrap/pwstrength-bootstrap' %>
+  <%= javascript_pack_tag 'vendor/libs/clipboard/clipboard' %>
+  <%= javascript_pack_tag 'vendor/libs/masonry/masonry' %>
+  <%= javascript_pack_tag 'vendor/libs/block-ui/block-ui' %>
+  <%= javascript_pack_tag 'vendor/libs/photoswipe/photoswipe' %>
+  <%= javascript_pack_tag 'vendor/libs/blueimp-gallery/gallery' %>
+  <%= javascript_pack_tag 'vendor/libs/blueimp-gallery/gallery-fullscreen' %>
+  <%= javascript_pack_tag 'vendor/libs/blueimp-gallery/gallery-indicator' %>
+  <%= javascript_pack_tag 'vendor/libs/blueimp-gallery/gallery-video' %>
+  <%= javascript_pack_tag 'vendor/libs/blueimp-gallery/gallery-vimeo' %>
+  <%= javascript_pack_tag 'vendor/libs/blueimp-gallery/gallery-youtube' %>
+  <%= javascript_pack_tag 'vendor/libs/idletimer/idletimer' %>
+  <%= javascript_pack_tag 'vendor/libs/smartwizard/smartwizard' %>
+  <%= javascript_pack_tag 'vendor/libs/perfect-scrollbar/perfect-scrollbar' %>
+  <%= javascript_pack_tag 'vendor/libs/plyr/plyr' %>
+<% end %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<%= render "complete_ui/numeral" %>
+<%= render "complete_ui/bootstrap_slider" %>
+<%= render "complete_ui/nouislider" %>
+<%= render "complete_ui/select2" %>
+<%= render "complete_ui/bootstrap_tagsinput" %>
+<%= render "complete_ui/bootstrap_select" %>
+<%= render "complete_ui/bootstrap_datepicker" %>
+<%= render "complete_ui/flatpickr" %>
+<%= render "complete_ui/bootstrap_daterangepicker" %>
+<%= render "complete_ui/bootstrap_material_datetimepicker" %>
+<%= render "complete_ui/timepicker" %>
+<%= render "complete_ui/minicolors" %>
+<%= render "complete_ui/fullcalendar" %>
+<%= render "complete_ui/autosize" %>
+<%= render "complete_ui/vanilla_text_mask" %>
+<%= render "complete_ui/bootbox" %>
+<%= render "complete_ui/sweetalert2" %>
+<%= render "complete_ui/growl" %>
+<%= render "complete_ui/toastr" %>
+<%= render "complete_ui/bootstrap_markdown" %>
+<%= render "complete_ui/quill" %>
+<%= render "complete_ui/typeahead" %>
+<%= render "complete_ui/datatables" %>
+<%= render "complete_ui/bootstrap_table" %>
+<%= render "complete_ui/bootstrap_sortable" %>
+<%= render "complete_ui/dropzone" %>
+<%= render "complete_ui/flow" %>
+<%= render "complete_ui/dragula" %>
+<%= render "complete_ui/sortablejs" %>
+<%= render "complete_ui/swiper" %>
+<%= render "complete_ui/knob" %>
+<%= render "complete_ui/bootstrap_menu" %>
+<%= render "complete_ui/bootstrap_duallistbox" %>
+<%= render "complete_ui/nestable" %>
+<%= render "complete_ui/jstree" %>
+<%= render "complete_ui/ladda" %>
+<%= render "complete_ui/validation" %>
+<%= render "complete_ui/vegas" %>
+<%= render "complete_ui/cropper" %>
+<%= render "complete_ui/bootstrap_maxlength" %>
+<%= render "complete_ui/shepherd" %>
+<%= render "complete_ui/pwstrength_bootstrap" %>
+<%= render "complete_ui/clipboard" %>
+<%= render "complete_ui/masonry" %>
+<%= render "complete_ui/spinkit" %>
+<%= render "complete_ui/blockui" %>
+<%= render "complete_ui/photoswipe" %>
+<%= render "complete_ui/blueimp_gallery" %>
+<%= render "complete_ui/idletimer" %>
+<%= render "complete_ui/smartwizard" %>
+<%= render "complete_ui/perfect_scrollbar" %>
+<%= render "complete_ui/plyr" %>
